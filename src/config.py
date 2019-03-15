@@ -1,18 +1,13 @@
 # /src/config.py
-
-# import os
-# from dotenv import load_dotenv, find_dotenv
-
-# load_dotenv(find_dotenv())
-
+import os
 
 class Development(object):
     # Development environment configuration
     DEBUG = True
     TESTING = False
     SQLALCHEMY_TRACK_MODIFICATIONS = False
-    JWT_SECRET_KEY = "atUdEYVYP6RfCHz9zkADgS"
-    SQLALCHEMY_DATABASE_URI = "postgresql://michael:Ronin@247@localhost:5432/mpharma"
+    JWT_SECRET_KEY = os.getenv('JWT_SECRET_KEY')
+    SQLALCHEMY_DATABASE_URI = os.getenv('DATABASE_URL')
 
 
 class Production(object):
@@ -20,15 +15,15 @@ class Production(object):
     DEBUG = False
     TESTING = False
     SQLALCHEMY_TRACK_MODIFICATIONS = False
-    SQLALCHEMY_DATABASE_URI = "atUdEYVYP6RfCHz9zkADgS"
-    JWT_SECRET_KEY = "postgresql://michael:Ronin@247@localhost:5432/mpharma"
+    JWT_SECRET_KEY = os.getenv('JWT_SECRET_KEY')
+    SQLALCHEMY_DATABASE_URI = os.getenv('DATABASE_URL')
 
 
 class Testing(object):
     # Development environment configuration
     TESTING = True
-    JWT_SECRET_KEY = "atUdEYVYP6RfCHz9zkADgS"
-    SQLALCHEMY_DATABASE_URI = "postgresql://michael:Ronin@247@localhost:5432/mpharma"
+    JWT_SECRET_KEY = os.getenv('JWT_SECRET_KEY')
+    SQLALCHEMY_DATABASE_URI = os.getenv('DATABASE_URL')
     SQLALCHEMY_TRACK_MODIFICATIONS = False
 
 
