@@ -26,3 +26,21 @@ python manage.py db upgrade
 <pre>
 python run.py<br>
 </pre>
+
+#API REQUIREMENT
+1. a Client accessing the diagnosis API should be first registered
+
+<Pre>URL: http://127.0.0.1:5000/api/v1/users/</pre>
+<Pre>REQUEST</pre>
+<pre>{
+	"email": "ansah@mail.com",
+	"password": "password",
+	"name": "ansah"
+}</pre>
+
+<Pre>RESPONSE</pre>
+<pre>{
+  "jwt_token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1NTI3MjA1MDgsImlhdCI6MTU1MjYzNDEwOCwic3ViIjoxfQ.fhUexvS7J3Ns6wQpqdT89oK1jGbw9MzQO77_qUPtyVY"
+}</pre>
+
+2. the value of <pre>jwt_token</pre> is sent in the header of subsequent resquest with key <pre>api-token</pre>
