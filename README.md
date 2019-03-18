@@ -3,6 +3,8 @@ RESTful API that can allow us to utilize an internationally recognized set of di
 #Install Python, Pipenv and Postgres on your machine<br>
 #Applicatin Setup Python (PipEnv) virtual environment<br>
 
+#move into project directory from GIT checkout and run the following commands from there
+
 #start virtual environment<br>
 <pre>pipenv shell</pre>
 
@@ -15,9 +17,9 @@ export FLASK_ENV=development<br>
 export JWT_SECRET_KEY=atUdEYVYP6RfCHz9zkADgS<br>
 export DATABASE_URL=postgresql://DB_USERNAME:DB_PASSWORD@DB_HOST:DB_PORT/DB_NAME <br>
 </pre> 
-
 #run below to migrate the database<br>
 <pre>
+python manage.py db init<br>
 python manage.py db migrate <br>
 python manage.py db upgrade
 </pre>
